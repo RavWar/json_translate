@@ -2,11 +2,11 @@ module JSONTranslate
   module Translates
     module InstanceMethods
       def disable_fallback
-        toggle_fallback(false)
+        toggle_fallback(false) { yield }
       end
 
       def enable_fallback
-        toggle_fallback(true)
+        toggle_fallback(true) { yield }
       end
 
       protected
